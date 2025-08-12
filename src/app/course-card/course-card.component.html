@@ -1,0 +1,27 @@
+<div class="course-card">
+
+        <div class="course-title">
+            {{index}} {{count}} {{course.description}}
+        </div>
+        <img width="300" alt="Angular Logo"
+             [src]="course.iconUrl">
+
+        <div class="course-description">
+            {{course.longDescription}}
+        </div>
+        @switch(course.category){
+            @case ("BEGINNER"){
+                <div><b>Begineer</b></div>
+            }
+             @case ("INTERMEDIATE"){
+                <div><b>Intermediate</b></div>
+            }
+             @case ("ADVANCED"){
+                <div><b>Advanced</b></div>
+            }
+            
+        }
+        <!-- change detection management -->
+         Edit title : <input #courseTitle [value]="course.description" (keyup)="onTitleChange(courseTitle.value)">
+
+    </div>

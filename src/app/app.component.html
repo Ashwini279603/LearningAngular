@@ -1,0 +1,21 @@
+<div class="top-menu">
+
+    <img class="logo"
+         src="https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png">
+
+</div>
+<div>
+    <button (click)="onEditCourse()">Edit title</button>
+</div>
+
+<div class="courses">
+    @for(course of Courses;track course.id; let index = $index){
+        <h1>{{$count}}</h1> 
+        <course-card  [course]="course" [index]="index" [count]="$count"/>
+    }
+    @empty{
+        <h1>No Data Found</h1>
+    }
+</div>
+
+
